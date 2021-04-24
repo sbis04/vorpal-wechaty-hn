@@ -21,7 +21,7 @@ function onScan (qrcode: string, status: ScanStatus) {
       encodeURIComponent(qrcode),
     ].join('')
 
-    log.info('StarterBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+    log.info('VorpelBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
   } else {
     log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
   }
