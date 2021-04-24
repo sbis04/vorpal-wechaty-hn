@@ -18,6 +18,8 @@
   "author": "Souvik Biswas",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "qrcode-terminal": "^0.12.0",
     "vorpal-hacker-news": "^1.0.6",
     "wechaty": "^0.60.5",
     "wechaty-vorpal": "^0.6.12"
@@ -25,6 +27,11 @@
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.3",
     "@chatie/tsconfig": "^0.14.1",
+    "check-node-version": "^4.1.0",
+    "connect": "^3.7.0",
+    "cross-env": "^7.0.3",
+    "is-pr": "^2.0.0",
+    "marked": "^2.0.0",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",
