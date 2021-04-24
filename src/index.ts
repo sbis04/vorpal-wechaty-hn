@@ -23,24 +23,20 @@ function onScan (qrcode: string, status: ScanStatus) {
 
     log.info('VorpelBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
   } else {
-    log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
+    log.info('VorpelBot', 'onScan: %s(%s)', ScanStatus[status], status)
   }
 }
 
 function onLogin (user: Contact) {
-  log.info('StarterBot', '%s login', user)
+  log.info('VorpelBot', '%s login', user)
 }
 
 function onLogout (user: Contact) {
-  log.info('StarterBot', '%s logout', user)
+  log.info('VorpelBot', '%s logout', user)
 }
 
 async function onMessage (msg: Message) {
-  log.info('StarterBot', msg.toString())
-
-  if (msg.text() === 'ding') {
-    await msg.say('dong')
-  }
+  log.info('VorpelBot', msg.toString())
 }
 
 const wechaty = new Wechaty({
