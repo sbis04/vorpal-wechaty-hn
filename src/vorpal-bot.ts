@@ -21,26 +21,26 @@ function onScan (qrcode: string, status: ScanStatus) {
       encodeURIComponent(qrcode),
     ].join('')
 
-    log.info('VorpelBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+    log.info('VorpalBot:', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
   } else {
-    log.info('VorpelBot', 'onScan: %s(%s)', ScanStatus[status], status)
+    log.info('VorpalBot:', 'onScan: %s(%s)', ScanStatus[status], status)
   }
 }
 
 function onLogin (user: Contact) {
-  log.info('VorpelBot', '%s login', user)
+  log.info('VorpalBot:', '%s login', user)
 }
 
 function onLogout (user: Contact) {
-  log.info('VorpelBot', '%s logout', user)
+  log.info('VorpalBot:', '%s logout', user)
 }
 
 async function onMessage (msg: Message) {
-  log.info('VorpelBot', msg.toString())
+  log.info('VorpalBot:', msg.toString())
 }
 
 const wechaty = new Wechaty({
-  name: "vorpel-bot",
+  name: "vorpal-bot",
   /**
    * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).
    *
@@ -55,7 +55,6 @@ const wechaty = new Wechaty({
    */
 
   // puppet: 'wechaty-puppet-hostie',
-  // puppet: "wechaty-puppet-mock"
 })
 
 wechaty

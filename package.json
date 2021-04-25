@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/*.ts\"",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/vorpal-bot.ts",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:puppet:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
