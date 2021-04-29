@@ -6,15 +6,15 @@ import {
   log,
 } from 'wechaty'
 
-import { WechatyVorpal }  from 'wechaty-vorpal'
+import { WechatyVorpal } from 'wechaty-vorpal'
 import { generate } from 'qrcode-terminal'
 const hackerNews = require('vorpal-hacker-news')
 
 require('dotenv').config()
 
-function onScan (qrcode: string, status: ScanStatus) {
+function onScan(qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    generate(qrcode, { small: true })  // show qrcode on console
+    generate(qrcode, { small: true })  // show QR code on console
 
     const qrcodeImageUrl = [
       'https://wechaty.js.org/qrcode/',
@@ -27,15 +27,15 @@ function onScan (qrcode: string, status: ScanStatus) {
   }
 }
 
-function onLogin (user: Contact) {
+function onLogin(user: Contact) {
   log.info('VorpalBot:', '%s login', user)
 }
 
-function onLogout (user: Contact) {
+function onLogout(user: Contact) {
   log.info('VorpalBot:', '%s logout', user)
 }
 
-async function onMessage (msg: Message) {
+async function onMessage(msg: Message) {
   log.info('VorpalBot:', msg.toString())
 }
 
@@ -58,10 +58,10 @@ const wechaty = new Wechaty({
 })
 
 wechaty
-.on('logout', onLogout)
-.on('login',  onLogin)
-.on('scan',   onScan)
-.on('message', onMessage)
+  .on('logout', onLogout)
+  .on('login', onLogin)
+  .on('scan', onScan)
+  .on('message', onMessage)
 
 wechaty.use(
   WechatyVorpal({
@@ -70,5 +70,5 @@ wechaty.use(
 )
 
 wechaty.start()
-        .then(() => log.info('VorpalBot', 'Vorpal Bot Started.'))
-        .catch(e => log.error('VorpalBot', e))
+  .then(() => log.info('VorpalBot', 'Vorpal Bot Started.'))
+  .catch(e => log.error('VorpalBot', e))
