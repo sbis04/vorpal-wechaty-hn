@@ -10,65 +10,20 @@ import { WechatyVorpal } from 'wechaty-vorpal'
 import { generate } from 'qrcode-terminal'
 const hackerNews = require('vorpal-hacker-news')
 
-require('dotenv').config()
+// TODO 1: Define the onScan function
 
-function onScan(qrcode: string, status: ScanStatus) {
-  if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    generate(qrcode, { small: true })  // show QR code on console
+// TODO 2: Define the onLogin function
 
-    const qrcodeImageUrl = [
-      'https://wechaty.js.org/qrcode/',
-      encodeURIComponent(qrcode),
-    ].join('')
+// TODO 3: Define the onLogout function
 
-    log.info('VorpalBot:', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
-  } else {
-    log.info('VorpalBot:', 'onScan: %s(%s)', ScanStatus[status], status)
-  }
-}
+// TODO 4: Define the onMessage function
 
-function onLogin(user: Contact) {
-  log.info('VorpalBot:', '%s login', user)
-}
+// TODO 5: Define the onError function
 
-function onLogout(user: Contact) {
-  log.info('VorpalBot:', '%s logout', user)
-}
+// TODO 6: Initialize the Wechaty bot
 
-async function onMessage(msg: Message) {
-  log.info('VorpalBot:', msg.toString())
-}
+// TODO 7: Handle the bot events
 
-const wechaty = new Wechaty({
-  name: "vorpal-bot",
-  /**
-   * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).
-   *
-   * You can use the following providers:
-   *  - wechaty-puppet-hostie
-   *  - wechaty-puppet-wechat
-   *  - wechaty-puppet-padplus
-   *  - etc.
-   *
-   * Learn more about Wechaty Puppet Providers at:
-   *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
-   */
+// TODO 8: Connect with the Vorpal Hacker News API
 
-  // puppet: 'wechaty-puppet-hostie',
-})
-
-wechaty
-  .on('logout', onLogout)
-  .on('login', onLogin)
-  .on('scan', onScan)
-  .on('message', onMessage)
-
-wechaty.use(
-  WechatyVorpal({
-    use: hackerNews,
-  }),
-)
-
-wechaty.start()
-  .then(() => log.info('VorpalBot', 'Vorpal Bot Started.'))
-  .catch(e => log.error('VorpalBot', e))
+// TODO 9: Start the bot
